@@ -5,5 +5,5 @@ Number1=100
 Number2=800
 
 
-TimeStamp=$(Date)
+TimeStamp=$(date)
 echo "script executed at: $TimeStamp"
