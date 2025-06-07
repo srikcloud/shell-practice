@@ -10,14 +10,14 @@ else
    echo "you are running with root access"
 fi
 
-dnf install mysqladcasfsafs -y
+dnf install mysql -y
 
 if [ $? -eq 0 ]
 then
     echo "installing MySQL is success"
 else 
     echo "Installing MySQL is failure"
-    #exit 1
+    exit 1
 fi
 
 
