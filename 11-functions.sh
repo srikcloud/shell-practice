@@ -11,13 +11,15 @@ else
 fi
 
 VALIDATE(){
-    if [ $? -eq 0 ]
+    if [ $1 -eq 0 ]
     then
         echo "installing $2 is success"
     else 
         echo "Installing $2 is failure"
+        exit 1
     fi
 }
+
 dnf list installed mysql
 # check already installed or not, if it installed $? is 0 then
 # If not installed $? is not 0, expression is true
@@ -28,7 +30,7 @@ then
     VALIDATE $? "MySQL"
 else 
     echo "MySQL is already installed...Nothing to do"
-    exit 1
+
 fi
 
 dnf list installed nginx
@@ -42,8 +44,9 @@ then
     VALIDATE $? "nginix"
 else 
     echo "nginx is already installed...Nothing to do"
-    exit 1
+
 fi
+
 dnf list installed python3
 
 # check already installed or not, if it installed $? is 0 then
@@ -55,6 +58,6 @@ then
     VALIDATE $? "python3"
 else 
     echo "python3 is already installed...Nothing to do"
-    exit 1
+
 fi
 
