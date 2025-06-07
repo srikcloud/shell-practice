@@ -10,7 +10,8 @@ else
    echo "you are running with root access"
 fi
 
-VALIDATE(){
+#validation function takes inputs as exit status, what command they tried to install
+ALIDATE(){
     if [ $1 -eq 0 ]
     then
         echo "installing $2 is success"
