@@ -10,7 +10,7 @@ else
    echo "you are running with root access"
 fi
 
-dnf installed mysql
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
